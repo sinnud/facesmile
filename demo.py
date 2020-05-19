@@ -12,10 +12,15 @@ if __name__ == '__main__':
     logzero.logfile(mylog)
 
     logger.info(f'start python code {__file__}.\n')
-    jpgpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'jpg')
-    modelpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'modeldata')
-    txtpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'txt')
-    outpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'out')
+    # jpgpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'jpg')
+    # modelpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'modeldata')
+    # txtpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'txt')
+    # outpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'out')
+    current_path=os.path.dirname(os.path.realpath(__file__))
+    jpgpath=os.path.join(current_path, "pic") # pic is link in linux
+    modelpath=current_path # link in linux
+    txtpath=os.path.join(current_path, "txt") # txt is linux link
+    outpath=os.path.join(current_path, "out")
     # Assume you have finished initialization, just load existing model
     fs=FaceSmile(pic=f'{jpgpath}/sue.jpg'
                  , pnt68=f'{txtpath}/sue68.txt'

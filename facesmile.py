@@ -547,16 +547,21 @@ class FaceSmile(object):
         logger.debug(f"FaceSmile.imgdt2jpg:finish output to {outpic}.")
 
 if __name__ == '__main__':
-    mylog = os.path.realpath(__file__).replace('.py', '.log').replace('python', 'log')
+    mylog = os.path.realpath(__file__).replace('.py', '.log') # .replace('python', 'log')
     if os.path.exists(mylog):
         os.remove(mylog)
     logzero.logfile(mylog)
 
     logger.info(f'start python code {__file__}.\n')
-    jpgpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'jpg')
-    modelpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'modeldata')
-    txtpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'txt')
-    outpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'out')
+    # jpgpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'jpg')
+    # modelpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'modeldata')
+    # txtpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'txt')
+    # outpath=os.path.dirname(os.path.realpath(__file__)).replace('python', 'out')
+    current_path=os.path.dirname(os.path.realpath(__file__))
+    jpgpath=os.path.join(current_path, "pic") # pic is link in linux
+    modelpath=current_path # link in linux
+    txtpath=os.path.join(current_path, "txt") # txt is linux link
+    outpath=os.path.join(current_path, "out")
 
     '''
     # initialization code, just run once

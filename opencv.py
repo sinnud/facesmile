@@ -207,4 +207,4 @@ if __name__ == '__main__':
     # main(pic='kevin.jpg', showflg=False)
     # main(pic='david.jpg', showflg=False)
     # main(pic='david1.jpg')
-    main(pic='lukesmile.jpg', showflg=False)
+    main(pic='pic/sue.jpg', showflg=False)
